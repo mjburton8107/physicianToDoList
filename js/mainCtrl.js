@@ -1,10 +1,19 @@
 angular.module('toDoList').controller('mainCtrl', function($scope, mainService){
 
-  $scope.tasks = [];
+  //gets task from local storage
+  $scope.tasks = mainService.getTasks();
+  // $scope.tasks = [];
 
   $scope.addTasks = function(userTask){
-     $scope.tasks.push(userTask);
+      mainService.addTasks(userTask);
+
+      $scope.tasks = mainService.getTasks();
+      $scope.userTask = '';
   };
+
+
+
+
 
   $scope.deleteTask = function(task){
     for (var i = 0; i < $scope.tasks.length; i++){
