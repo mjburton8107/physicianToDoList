@@ -16,11 +16,7 @@ angular.module('toDoList').controller('mainCtrl', function($scope, mainService){
 
 
   $scope.deleteTask = function(task){
-    for (var i = 0; i < $scope.tasks.length; i++){
-      if($scope.tasks[i] === task){
-        $scope.tasks.splice(i, 1);
-      }
-    }
+    mainService.deleteTasks(task);
+    $scope.tasks = mainService.getTasks();
   }
-
 });

@@ -12,7 +12,7 @@ this.getTasks = function(){
 };
 
 this.deleteTasks = function(task){
-  return LS_wrapper.delete(task);
+  LS_wrapper.delete(task, TASK_LIST);
 };
 
 
@@ -40,7 +40,7 @@ var LS_wrapper = {
 
     return JSON.parse(myStorage);
   },
-  delete: function(task){
+  delete: function(task, store){
     var myStorage = localStorage.getItem(store);
     var newArray = JSON.parse(myStorage)
     for (var i = 0; i < newArray.length; i++){
@@ -48,7 +48,8 @@ var LS_wrapper = {
         newArray.splice(i, 1);
       }
     }
-    localStorage.setItem(store, JSON.stringify(newArray));
+    var newStringData = JSON.stringify(newArray);
+    var myStorage = localStorage.setItem(store, newStringData);
   }
 
 }
