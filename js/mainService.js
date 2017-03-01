@@ -11,18 +11,6 @@ this.getTasks = function(){
   return LS_wrapper.get(TASK_LIST);
 }
 
-// localStorage.setItem('taskList', JSON.stringify(this.taskList));
-//
-// var existingTasks = localStorage.getItem('taskList');
-// console.log(existingTasks);
-//
-// this.getTasks = function(){
-//   var existingTasks = localStorage.getItem('taskList');
-//   this.taskList = JSON.parse(existingTasks);
-//   return this.taskList;
-// }
-
-
 
 });
 

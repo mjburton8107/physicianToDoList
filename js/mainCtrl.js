@@ -23,7 +23,4 @@ angular.module('toDoList').controller('mainCtrl', function($scope, mainService){
     }
   }
 
-  // $scope.tasks = mainService.getTasks();
-  // console.log('this is $scope.tasks', $scope.tasks)
-
 });
