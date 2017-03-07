@@ -6,9 +6,9 @@
   </head>
   <body ng-controller="mainCtrl">
 
-    <form ng-submit="addTasks(userTask)">
+    <form ng-submit="addTasks(userTask, userTaskLink)">
         <input type="text" ng-model="userTask" placeholder="Add New Tasks">
-        <!-- <input type="text" ng-model="userTaskLink" placeholder="Task Link"> -->
+        <input type="text" ng-model="userTaskLink" placeholder="Task Link">
     </form>
 
     <ul ng-repeat="task in tasks track by $index">

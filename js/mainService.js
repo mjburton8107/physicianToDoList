@@ -3,8 +3,8 @@ angular.module('toDoList').service('mainService', function(){
 this.taskList = [];
 var TASK_LIST = 'tasks';
 
-this.addTasks = function(userTask){
-  LS_wrapper.push(userTask, TASK_LIST)
+this.addTasks = function(userTask, userTaskLink){
+  LS_wrapper.push(userTask, userTaskLink, TASK_LIST)
 };
 
 this.getTasks = function(){
@@ -20,7 +20,7 @@ this.deleteTasks = function(task){
 
 
 var LS_wrapper = {
-  push: function(item, store) {
+  push: function(item, itemlink, store) {
     var data = JSON.parse(localStorage.getItem(store));
 
     if (!data
@@ -29,7 +29,7 @@ var LS_wrapper = {
       data = []
     }
 
-    data.push(item);
+    data.push(item, itemlink);
     var stringData = JSON.stringify(data);
 
     localStorage.setItem(store, stringData)
