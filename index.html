@@ -11,8 +11,10 @@
     </form>
 
     <ul ng-repeat="task in tasks track by $index">
-       {{ task }}
-       <input type="checkbox"></button>
+      <!-- trying to add link functionality when adding tasks -->
+       <!-- <div ng-src='{{task}}'>{{ task }}</div> -->
+       <a href="{{task}}">{{task}}</a>
+       <input type="checkbox"></input>
        <button ng-click=deleteTask(task)>Delete Task</button>
     </ul>
 
