@@ -8,12 +8,13 @@
 
     <form ng-submit="addTasks(userTask)">
         <input type="text" ng-model="userTask" placeholder="Add New Tasks">
+        <!-- <input type="text" ng-model="userTaskLink" placeholder="Task Link"> -->
     </form>
 
     <ul ng-repeat="task in tasks track by $index">
       <!-- trying to add link functionality when adding tasks -->
       <!-- when adding tasks you want to link you have to have 'http://' on the front of the link -->
-       <!-- <div ng-src='{{task}}'>{{ task }}</div> -->
+       <!-- <div>{{ task }}</div> -->
        <a href="{{task}}">{{task}}</a>
        <input type="checkbox"></input>
        <button ng-click=deleteTask(task)>Delete Task</button>
